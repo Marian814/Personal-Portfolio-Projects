@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button id="loginHeaderBtn" class="nav-btn">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="signupHeaderBtn" class="nav-btn">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="gym.html" id="menuGymLink">Gym</a>
+    <a href="trainer.html" id="menuTrainerLink">Trainer</a>
+    <a href="nutritionist.html" id="menuNutritionLink">Nutritionist</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="filter-page-main">
+    <section id="gymDetails" class="gym-details">
+    </section>
+
+    <section id="gymPhotosSection" class="gym-photos-section">
+        <div class="gym-photos-header">
+            <h2>Photos</h2>
+            <button id="addPhotoBtn" class="plus-btn">+</button>
+        </div>
+
+        <div id="gymPhotosSlider" class="gym-photos-slider">
+        </div>
+
+        <div id="addPhotoForm" class="add-photo-form">
+            <input type="text"
+                   id="photoUrlInput"
+                   class="city-select"
+                   placeholder="Paste Google Drive image link...">
+            <button id="savePhotoBtn" class="search-btn">Add Photo</button>
+            <p id="photoMessage" class="login-message"></p>
+        </div>
+    </section>
+
+    <section id="gymSubscriptionsSection" class="gym-subs-section">
+        <div class="gym-subs-header">
+            <h2>Subscriptions</h2>
+            <button id="addSubBtn" class="plus-btn">+</button>
+        </div>
+
+        <div class="gym-subs-slider-wrapper">
+            <button id="prevSubBtn" class="subs-nav-btn">&#10094;</button>
+
+            <div id="subsSlider" class="gym-subs-slider">
+            </div>
+
+            <button id="nextSubBtn" class="subs-nav-btn">&#10095;</button>
+        </div>
+
+        <div id="addSubForm" class="add-sub-form">
+            <input type="number"
+                   step="0.01"
+                   id="subPriceInput"
+                   class="city-select"
+                   placeholder="Price (RON)">
+            <input type="text"
+                   id="subBenefitsInput"
+                   class="city-select"
+                   placeholder="Benefits (short description)">
+            <button id="saveSubBtn" class="search-btn">Add Subscription</button>
+            <p id="subMessage" class="login-message"></p>
+        </div>
+    </section>
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/auth-ui.js"></script>
+<script src="js/gym_details.js"></script>
+
+</body>
+
+</html>

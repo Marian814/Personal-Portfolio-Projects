@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button class="nav-btn" onclick="window.location.href='signup.html'">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="login-main">
+    <h1 class="login-title">Welcome back!</h1>
+
+    <form class="login-form">
+        <div class="login-field">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername">
+        </div>
+
+        <div class="login-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword">
+        </div>
+
+        <button type="button" id="loginBtn" class="login-submit">
+            Log In
+        </button>
+
+        <p id="loginMessage" class="login-message"></p>
+
+        <p class="login-small-text">
+            You don't have an account?
+            <a href="signup.html"><strong>Sign In</strong></a>
+        </p>
+    </form>
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+
+</html>

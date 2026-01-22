@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment - GymFinder</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+</header>
+
+<hr class="header-separator">
+
+<main class="auth-main">
+    <section class="auth-card">
+        <h1 class="auth-title">Complete Payment</h1>
+
+        <p id="planData" style="text-align:center;"></p>
+
+        <form id="paymentForm" class="auth-form">
+
+            <div class="form-group">
+                <label>Card Holder Name</label>
+                <input type="text" id="cardName" placeholder="John Doe">
+            </div>
+
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Expiry</label>
+                    <input type="text" id="expiry" placeholder="MM/YY">
+                </div>
+
+                <div class="form-group">
+                    <label>CVC</label>
+                    <input type="text" id="cvc" placeholder="123">
+                </div>
+            </div>
+
+            <button class="primary-btn full-width">
+                Pay Now
+            </button>
+
+            <p id="paymentMessage" class="login-message"></p>
+
+        </form>
+    </section>
+</main>
+
+<script src="js/payment.js"></script>
+
+</body>
+
+</html>

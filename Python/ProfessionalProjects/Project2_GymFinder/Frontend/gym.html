@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GymFinder - Gyms</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button id="loginHeaderBtn" class="nav-btn">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="signupHeaderBtn" class="nav-btn">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+
+    <a href="gym.html" id="menuGymLink">Gym</a>
+    <a href="trainer.html" id="menuTrainerLink">Trainer</a>
+    <a href="nutritionist.html" id="menuNutritionLink">Nutritionist</a>
+
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+
+<main class="filter-page-main">
+    <section class="filter-bar">
+        <button id="plusBtn" class="plus-btn">+</button>
+
+        <input
+            type="text"
+            id="gymCityInput"
+            class="city-select"
+            placeholder="Enter city name..."
+        >
+
+        <button id="gymSearchBtn" class="search-btn">Search</button>
+    </section>
+
+    <section id="gymsList" class="gyms-list">
+    </section>
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/auth-ui.js"></script>
+
+<script>
+    const plusBtn = document.getElementById("plusBtn");
+    if (plusBtn) {
+        plusBtn.addEventListener("click", () => {
+            window.location.href = "add_gym.html";
+        });
+    }
+    const gymsList  = document.getElementById("gymsList");
+    const searchBtn = document.getElementById("gymSearchBtn");
+    const cityInput = document.getElementById("gymCityInput");
+    async function loadGymsForSelectedCity() {
+        const city = cityInput.value.trim();
+        gymsList.innerHTML = "";
+        if (!city) {
+            const p = document.createElement("p");
+            p.textContent = "Enter a city to see available gyms.";
+            gymsList.appendChild(p);
+            return;
+        }
+        console.log("Searching gyms for city:", city);
+        try {
+        const res = await fetch(`/api/gyms?city=${encodeURIComponent(city)}`);
+        const data = await res.json();
+        console.log("Response from /api/gyms:", data);
+        if (!res.ok) {
+            const p = document.createElement("p");
+            p.textContent = data.error || "Failed to load gyms.";
+            gymsList.appendChild(p);
+            return;
+        }
+        const gymsArray = Array.isArray(data) ? data : (data.gyms || []);
+        if (!gymsArray.length) {
+            const p = document.createElement("p");
+            p.textContent = "No gyms found in this city.";
+            gymsList.appendChild(p);
+            return;
+        }
+        gymsArray.forEach(gym => {
+            const card = document.createElement("div");
+            card.className = "gym-card";
+            card.dataset.id = gym.id;
+            card.innerHTML = `
+                <h3>${gym.gym_name}</h3>
+                <p>${gym.street} ${gym.street_number}, ${gym.city}</p>
+                <p class="gym-small">
+                    Size: ${gym.size_m2 || "N/A"} m² |
+                    Locker: ${gym.has_locker_room ? "Yes" : "No"} |
+                    Boxing: ${gym.has_boxing ? "Yes" : "No"} |
+                    Sauna: ${gym.has_sauna ? "Yes" : "No"} |
+                    Pool: ${gym.has_pool ? "Yes" : "No"}
+                </p>
+            `;
+            card.addEventListener("click", () => {
+                window.location.href = `gym_details.html?id=${gym.id}`;
+            });
+            gymsList.appendChild(card);
+        });
+    } catch (err) {
+        console.error(err);
+        const p = document.createElement("p");
+        p.textContent = "Server error while loading gyms.";
+        gymsList.appendChild(p);
+    }
+    }
+    searchBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        loadGymsForSelectedCity();
+    });
+    cityInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            loadGymsForSelectedCity();
+        }
+    });
+</script>
+
+</body>
+
+</html>

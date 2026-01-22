@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button class="nav-btn" onclick="window.location.href='login.html'">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="login-main">
+    <h1 class="login-title">Create an account</h1>
+
+    <form class="login-form">
+        <div class="login-field">
+            <label for="regRole">User</label>
+            <select id="regRole">
+                <option value="member">Member</option>
+                <option value="gym_owner">Gym Owner</option>
+                <option value="personal_trainer">Personal Trainer</option>
+                <option value="nutrition_coach">Nutrition Coach</option>
+            </select>
+        </div>
+
+        <div class="login-field">
+            <label for="regUsername">Username</label>
+            <input type="text" id="regUsername">
+        </div>
+
+        <div class="login-field">
+            <label for="regEmail">Email</label>
+            <input type="email" id="regEmail">
+        </div>
+
+        <div class="login-field">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword">
+        </div>
+
+        <button type="button" id="registerBtn" class="login-submit">
+            Sign In
+        </button>
+
+        <p id="registerMessage" class="login-message"></p>
+
+        <p class="login-small-text">
+            You have an account?
+            <a href="login.html"><strong>Log In</strong></a>
+        </p>
+    </form>
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/signup.js"></script>
+
+</body>
+
+</html>

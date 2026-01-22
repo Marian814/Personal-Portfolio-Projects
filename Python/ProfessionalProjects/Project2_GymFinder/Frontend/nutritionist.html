@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nutritionists - GymFinder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button id="loginHeaderBtn" class="nav-btn">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="signupHeaderBtn" class="nav-btn">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="gym.html" id="menuGymLink">Gym</a>
+    <a href="trainer.html" id="menuTrainerLink">Trainer</a>
+    <a href="nutritionist.html" id="menuNutritionLink">Nutritionist</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="filter-page-main">
+
+    <section class="filter-bar">
+        <button id="nutritionistPlusBtn" class="plus-btn">+</button>
+
+        <input
+            type="text"
+            id="nutritionistCityInput"
+            class="city-select"
+            placeholder="Enter city name..."
+        >
+
+        <button id="nutritionistSearchBtn" class="search-btn">Search</button>
+    </section>
+
+    <section id="nutritionistsList" class="gyms-list">
+    </section>
+
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/auth-ui.js"></script>
+<script src="js/nutritionist.js"></script>
+
+</body>
+
+</html>

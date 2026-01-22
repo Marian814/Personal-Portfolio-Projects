@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Nutritionist - GymFinder</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button id="loginHeaderBtn" class="nav-btn">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="signupHeaderBtn" class="nav-btn">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="gym.html" id="menuGymLink">Gym</a>
+    <a href="trainer.html" id="menuTrainerLink">Trainer</a>
+    <a href="nutritionist.html" id="menuNutritionLink">Nutritionist</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="index.html#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="auth-main">
+    <section class="auth-card gym-add-card">
+        <h1 class="auth-title">Add Nutritionist</h1>
+
+        <form id="addNutritionistForm" class="auth-form gym-add-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nutritionistName">Name</label>
+                    <input type="text"
+                           id="nutritionistName"
+                           placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="experience">Experience (years)</label>
+                    <input type="number"
+                           id="experience"
+                           min="0"
+                           placeholder="3">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <input type="text"
+                           id="country"
+                           placeholder="Romania">
+                </div>
+
+                <div class="form-group">
+                    <label for="district">District</label>
+                    <input type="text"
+                           id="district"
+                           placeholder="Cluj">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text"
+                       id="city"
+                       placeholder="Cluj-Napoca">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Short description</label>
+                <textarea id="description"
+                          rows="4"
+                          placeholder="Describe your specialization, services, etc."></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn full-width">
+                Save Nutritionist Profile
+            </button>
+
+            <p id="nutritionistMessage" class="login-message"></p>
+        </form>
+    </section>
+</main>
+
+<script src="js/menu.js"></script>
+<script src="js/auth-ui.js"></script>
+<script src="js/add_nutritionist.js"></script>
+
+</body>
+
+</html>

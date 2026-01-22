@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GymFinder - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="brand">GymFinder</div>
+
+    <nav class="top-nav">
+        <button id="loginHeaderBtn" class="nav-btn">
+            <span>Log In</span>
+            <i class="fa-regular fa-user"></i>
+        </button>
+
+        <button id="signupHeaderBtn" class="nav-btn">
+            <span>Sign In</span>
+            <i class="fa-solid fa-lock"></i>
+        </button>
+
+        <button id="menuToggle" class="nav-btn">
+            <span>Menu</span>
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<hr class="header-separator">
+
+<nav id="sideMenu" class="side-menu">
+    <a href="index.html" id="menuHomeLink">Home</a>
+    <a href="gym.html" id="menuGymLink">Gym</a>
+    <a href="trainer.html" id="menuTrainerLink">Trainer</a>
+    <a href="nutritionist.html" id="menuNutritionLink">Nutritionist</a>
+    <a href="login.html" id="menuLoginLink">Log In</a>
+    <a href="signup.html" id="menuSignupLink">Sign In</a>
+    <a href="#about" id="menuAboutLink">About</a>
+</nav>
+
+<main class="landing-main">
+    <section class="hero">
+        <img src="images/mainPhoto.png"
+             alt="People training in a gym"
+             class="hero-image">
+
+        <div class="hero-slogan">
+            Everything you need for a healthy life.
+        </div>
+    </section>
+
+    <section class="slider-section">
+
+        <div class="image-slider">
+
+            <div class="slider-window">
+                <img src="images/slide1.jpg" alt="Modern gym" class="slide active">
+                <img src="images/slide2.jpg" alt="Personal trainer" class="slide">
+                <img src="images/slide3.jpg" alt="Group training" class="slide">
+                <img src="images/slide4.jpg" alt="Healthy food" class="slide">
+            </div>
+
+        </div>
+    </section>
+
+    <section id="about" class="about-section about-with-bg">
+        <div class="about-overlay">
+            <h2 class="about-title">About</h2>
+            <p>
+                GymFinder este o platformă digitală dedicată pasionaților de fitness, care conectează utilizatorii cu
+                săli de sport, antrenori personali și nutriționiști într-un singur ecosistem ușor de utilizat.
+                Aplicația oferă informații detaliate despre săli, abonamente flexibile, facilități disponibile și
+                servicii personalizate, ajutând utilizatorii să ia decizii rapide și informate.
+            </p>
+        </div>
+    </section>
+
+</main>
+
+<footer class="main-footer">
+    <p>© 2026 GymFinder. All rights reserved.</p>
+</footer>
+
+<script src="js/menu.js"></script>
+<script src="js/auth-ui.js"></script>
+<script src="js/slider.js"></script>
+
+</body>
+
+</html>
